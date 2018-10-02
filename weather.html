@@ -22,7 +22,9 @@
 <script>
   $(document).ready(function() {
     $( "#cityText" ).keyup(function() {
-      $.getJSON("http://bioresearch.byu.edu/cs260/jquery/getcity.cgi?q=P",function(data) {
+      var parameter = 'http://bioresearch.byu.edu/cs260/jquery/getcity.cgi?q=';
+      parameter += $("#cityText").val();
+      $.getJSON(parameter,function(data) {
         var everything;
         everything = "<ul>";
         $.each(data, function(i,item) {
