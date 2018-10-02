@@ -22,8 +22,12 @@
 <script>
   $(document).ready(function() {
     $( "#cityText" ).keyup(function() {
-      //alert( "Handler for .keyup() called." );
-      $("#txtHint").text("Keyup "+$("#cityText").val());
+      $.getJSON("staticCity.txt",function(data) {
+      console.log(data);
+      console.log(data[0]);
+      console.log("Got "+data[0].city);
+      });
+      $("#txtHint").text("Keyup "+$("#cityField").val());
     });
   });
 </script>
