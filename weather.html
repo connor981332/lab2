@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>My Weather Page</title>
-</head>
+  <head>
+    <title>My Weather Page</title>
+    <script
+      src="http://code.jquery.com/jquery-3.2.1.min.js">
+    </script>
+  </head>
 
-
-<body>
-
-<h1>Something very important is going to go here...</h1>
-<p>Please enter the name of the city you would like to query</p>
-<form>
-  City name:<br>
-  <input type="text" name="firstname" value="Madisonville"> <br>
-  <input type="submit" value="Go!"><br>
-  Suggestion:<span id="txtHint">Empty</span>
-</form>
-
-</body>
+  <body>
+    <h1>Something very important is going to go here...</h1>
+    <p>Please enter the name of the city you would like to query</p>
+    <form>
+      City name:<br>
+      <input id="cityText" type="text" name="firstname" value=""> <br>
+      <input type="submit" value="Go!"><br>
+      Suggestions:<br><span id="txtHint">Empty</span>
+    </form>
+  </body>
 </html>
+
+<script>
+  $(document).ready(function() {
+    $( "#cityText" ).keyup(function() {
+      //alert( "Handler for .keyup() called." );
+      $("#txtHint").text("Keyup "+$("#cityText").val());
+    });
+  });
+</script>
