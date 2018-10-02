@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <h1>Something very important is going to go here...</h1>
+    <h1>Find the Weather!</h1>
     <p>Please enter the name of the city you would like to query</p>
     <form>
       City name:<br>
@@ -103,7 +103,7 @@
                 everything = "<ul>";
                 $.each(parsed_json.items, function(i,item) {
                   everything += '<li id="title/link">' + '<a href=' + item.link + '>' + item.title + '</a>';
-                  everything += '<li id="view_count">' + 'views: ' + item.view_count;
+                  everything += '<li id="view_count">' + 'views: ' + item.view_count + '<br>';
                 });
                 everything += "</ul>"
                 $("#query").html(everything);
