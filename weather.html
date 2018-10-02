@@ -13,7 +13,7 @@
     <form>
       City name:<br>
       <input id="cityText" type="text" name="firstname" value=""> <br>
-      <input type="submit" value="Go!"><br>
+      <input id="submitButton" type="submit" value="Go!"><br>
       Suggestions:<br><span id="txtHint">Empty</span>
     </form>
   </body>
@@ -40,6 +40,11 @@
       })
       .always(function() { console.log('getJSON request ended!');
       });
+    });
+    $("#submitButton").click(function(e){
+      var value = $("#cityText").val();
+      console.log(value);
+      e.preventDefault();
     });
   });
 </script>
