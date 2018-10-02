@@ -47,6 +47,27 @@
       console.log(value);
       e.preventDefault();
       $("#selectedCity").text(value);
+      //insert API call here:
+      var url = 'https://api.openweathermap.org/data/2.5/weather?units=imperial&appid=e71d46c042a3ed66257ef2341b635893&q=';
+      url += value;
+      $.getJSON(url,function(data) {
+        console.log('Results of JSON fetch next');
+        console.log(data);
+        var everything;
+        everything = "<ul>";
+        $.each(data, function(i,item) {
+          everything += "<li> "+data[i].city;
+        });
+        everything += "</ul>";
+        $("#txtHint").html(everything);
+      })
+      .done(function() { console.log('getJSON request succeeded!'); })
+      .fail(function(jqXHR, textStatus, errorThrown) {
+        console.log('getJSON request failed! ' + textStatus);
+        console.log("incoming "+jqXHR.responseText);
+      })
+      .always(function() { console.log('getJSON request ended!');
+      });
     });
   });
 </script>
