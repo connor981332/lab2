@@ -23,11 +23,17 @@
   $(document).ready(function() {
     $( "#cityText" ).keyup(function() {
       $.getJSON("staticCity.txt",function(data) {
-      console.log(data);
-      console.log(data[0]);
       console.log("Got "+data[0].city);
       });
       $("#txtHint").text("Keyup "+$("#cityText").val());
     });
+    var everything;
+    everything = "<ul>";
+    $.each(data, function(i,item) {
+      everything += "<li> "+data[i].city;
+    });
+
+    everything += "</ul>";
+    $("#txtHint").html(everything);
   });
 </script>
