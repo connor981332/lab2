@@ -16,6 +16,7 @@
       <input id="submitButton" type="submit" value="Go!"><br>
       Suggestions:<br><span id="txtHint">Empty</span>
     </form>
+    <textarea id="selectedCity">No City</textarea>
   </body>
 </html>
 
@@ -45,6 +46,7 @@
       var value = $("#cityText").val();
       console.log(value);
       e.preventDefault();
+      $("#selectedCity").text(value);
     });
   });
 </script>
