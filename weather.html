@@ -102,9 +102,8 @@
                 var everything;
                 everything = "<ul>";
                 $.each(parsed_json.items, function(i,item) {
-                  everything += '<li>' + item.link;
-                  everything += '<li>' + item.title;
-                  everything += '<li>' + item.view_count;
+                  everything += '<li id="title/link">' + '<a href=' + item.link + '>' + item.title + '</a>';
+                  everything += '<li id="view_count">' + 'views: ' + item.view_count;
                 });
                 everything += "</ul>"
                 $("#query").html(everything);
